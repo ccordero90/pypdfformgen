@@ -16,7 +16,7 @@ os.environ['PATH'] += os.pathsep + 'C:\\Program Files (x86)\\PDFtk\\bin;'
 def process_csv(file):
     headers = []
     data =  []
-    csv_data = csv.reader(open(file))
+    csv_data = csv.reader(open(file), delimiter=';')
     for i, row in enumerate(csv_data):
       if i == 0:
         headers = row
@@ -33,7 +33,7 @@ def form_fill(fields):
   fdf_file.write(fdf)
   fdf_file.close()
   output_file = '{0}{1} {2}.pdf'.format(output_folder, filename_prefix, fields[1][1])
-  cmd = 'pdftk "{0}" fill_form "{1}" output "{2}" dont_ask'.format(pdf_file, tmp_file, output_file)
+  cmd = 'pdftk "{0}" fill_form "{1}" output "{2}" dont_ask flatten'.format(pdf_file, tmp_file, output_file)
   os.system(cmd)
   os.remove(tmp_file)
 
