@@ -11,12 +11,12 @@ csv_file = "formulario.csv"
 pdf_file = "formulario.pdf"
 tmp_file = "tmp.fdf"
 output_folder = './output/'
-#os.environ['PATH'] += os.pathsep + 'C:\\Program Files (x86)\\PDFtk\\bin;'  #uncomment if in windows
+#os.environ['PATH'] += os.pathsep + 'C:\\Program Files (x86)\\PDFtk\\bin;'  #descomentar si en windows
 
 def process_csv(file):
     headers = []
     data =  []
-    csv_data = csv.reader(open(file), delimiter=';')
+    csv_data = csv.reader(open(file), delimiter=',')   # cambiar a ';' si se genera csv en libreoffice
     for i, row in enumerate(csv_data):
       if i == 0:
         headers = row
