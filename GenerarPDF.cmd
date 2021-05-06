@@ -1,7 +1,12 @@
-ECHO ON
+ECHO OFF 
 
+REM agregar PATH para python, pdftk y lector de pdf (en mi caso chrome)
+SET PATH=%PATH%;C:\Program Files (x86)\PDFtk\bin\;C:\Users\Carlos\AppData\Local\Chromium\Application;C:\Users\Carlos\AppData\Local\Programs\Python\Python39\
+
+REM inicio del codigo
 del /F /Q output
-python test.py
+python pdfformgen.py
 cd output
 pdftk *.pdf cat output forms.pdf
 chrome forms.pdf
+PAUSE 1
