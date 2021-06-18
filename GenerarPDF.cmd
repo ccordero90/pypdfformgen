@@ -8,5 +8,5 @@ del /F /Q output
 python pdfformgen.py
 cd output
 pdftk *.pdf cat output forms.pdf
-chrome forms.pdf
+chrome file:///%~dp0forms.pdf
 PAUSE 1
