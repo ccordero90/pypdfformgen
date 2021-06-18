@@ -9,4 +9,3 @@ python pdfformgen.py
 cd output
 pdftk *.pdf cat output forms.pdf
 chrome file:///%~dp0output/forms.pdf
-PAUSE 1
